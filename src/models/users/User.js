@@ -1,5 +1,5 @@
 class User {
-  constructor(id, name, email, password) {
+  constructor(name, email, password) {
     this.id = this.generateID();
     this.name = name;
     this.email = email;
@@ -9,3 +9,6 @@ class User {
     return Math.floor(Math.random() * 999) + 1;
   }
 }
+ 
+
+export default User;
