@@ -1,8 +1,7 @@
 import { Router } from "express";
 
 // Lista de importação das rotas do projeto
-import usuariosRoutesRoutes from "./usuarios.routes.js";
-import usuariosRoutes from "../../usuarios.routes.js";
+import usuariosRoutes from "./usuarios.routes.js";
 
 const routes = Router();
 
@@ -14,4 +13,4 @@ routes.get("/", (req, res) => {
 // Lista de uso das rotas do projeto
 routes.use("/usuarios", usuariosRoutes);
 
-export default routes;atos
+export default routes;
