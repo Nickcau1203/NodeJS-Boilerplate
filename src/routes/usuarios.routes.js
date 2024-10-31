@@ -43,7 +43,24 @@ userRoutes.get("/:id", (req, res) => {
         user,
     });
 })
-userRoutes.put("/:id", (req, res) => {});
+userRoutes.put("/:id", (req, res) => {
+    const { id } = req.params;
+    const { name, email, password } = req.body; 
+    const user = userRepository.updateUser(id, name, email, password);  
+
+    if (!user) {
+        return res.status(404).json({
+            message: `Usuário com id ${id} não encontrado!`,
+        });
+    }
+
+    return res.status(200).json({
+        message: `Usuário com id ${id} atualizado com sucesso!`,
+        user,
+    });
+});
+
 userRoutes.delete("/:id", (req, res) => {});
+
 
 export default userRoutes;
